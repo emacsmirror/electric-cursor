@@ -46,9 +46,9 @@
   "Alist of modes and cursors to apply to them.
 The car of each of element is a mode or hook, and the cdr is the
 `cursor-type', which see."
-  :type '(alist :key-type (choice (function :tag "Mode")
+  :type `(alist :key-type (choice (function :tag "Mode")
                                   (hook :tag "Mode hook"))
-                :value-type (get 'cursor-type 'custom-type)))
+                :value-type ,(get 'cursor-type 'custom-type)))
 
 (defcustom electric-cursor-default-cursor (alist-get t electric-cursor-alist)
   "The cursor to use when no modes in `electric-cursor-alist' are active.
